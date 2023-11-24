@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 defaults:
   run:
-    working-directory: ${GITHUB_WORKSPACE}/terraform
+    working-directory: ./terraform
 
 jobs:
   terraform:
