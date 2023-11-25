@@ -54,11 +54,11 @@ jobs:
 
       - name: Validate
         id: validate
-        run: terraform validate -no-color
+        run: terraform validate
 
       - name: Create Plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan
         continue-on-error: true
 
       - name: Upload Plan to PR
@@ -129,11 +129,11 @@ jobs:
 
       - name: Validate
         id: validate
-        run: terraform validate -no-color
+        run: terraform validate
 
       - name: Create Plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan
         continue-on-error: true
 
       - name: Upload Plan to PR
