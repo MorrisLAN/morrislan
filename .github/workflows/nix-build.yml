@@ -28,8 +28,10 @@ jobs:
           -I nixos-config=./nix/srv-cfzt-01/configuration.sdImage.nix \
           --argstr system aarch64-linux \
           --option sandbox false
-    - name: Upload image
-      uses: actions/upload-artifact@v3
+    - uses: BetaHuhn/do-spaces-action@v2
       with:
-        name: srv-cfzt-01
-        path: ./result/sd-image/*.img*
+        access_key: ${{ secrets.DOSPACES_ACCESS_KEY}}
+        secret_key: ${{ secrets.DOSPACES_SECRET_KEY }}
+        space_name: "nix-builds"
+        space_region: "fra1"
+        source: ./result/sd-image
