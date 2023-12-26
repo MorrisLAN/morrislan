@@ -1,5 +1,6 @@
 name: 'Trivy'
 on:
+   pull_request:
    push:
      branches: [ "main" ]
 
@@ -10,15 +11,16 @@ permissions:
 jobs:
   build:
     name: Trivy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Trivy vulnerability scanner in IaC mode
+      - name: Scan `terraform`
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
+          scan-ref: './terraform'
           hide-progress: false
           format: 'sarif'
           output: 'trivy-results.sarif'
