@@ -8,7 +8,7 @@
   networking = {
     hostName = "vm-maxdev01";
     useDHCP = false;
-    interfaces.enp0s1.useDHCP = true;
+    interfaces.enp0s1.useDHCP = false;
   };
 
   services.xserver.enable = true;
