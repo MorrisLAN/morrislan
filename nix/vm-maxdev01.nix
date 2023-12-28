@@ -11,7 +11,7 @@
     useDHCP = false;
     interfaces.enp0s1 = {
       ipv4.addresses = [{
-       address = "10.1.240.52";
+       address = "10.1.240.55";
        prefixLength = 24;
       }];
     };
